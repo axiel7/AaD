@@ -1,3 +1,7 @@
+/*
+ * Realizado por Axel Lopez - 2DAM
+ * @author: axiel7
+ */
 package com.axiel7.images01;
 
 import javax.swing.*;
