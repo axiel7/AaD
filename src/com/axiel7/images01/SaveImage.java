@@ -45,7 +45,7 @@ public class SaveImage extends JFrame {
         chooseButton.addActionListener(e -> {
             File file = chooseFile();
             // mostrar botón de subida una vez seleccionado un fichero
-            submitButton.setVisible(true);
+            if (!textFile.getText().isEmpty()) { submitButton.setVisible(true); }
             submitButton.addActionListener(e1 -> {
                 insertImg(connection, file);
                 textCompleted.setVisible(true); // mostrar texto de operación exitosa
