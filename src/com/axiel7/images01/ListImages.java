@@ -64,6 +64,8 @@ public class ListImages extends JFrame {
                 Object[] row = { resultSet.getInt(1), resultSet.getBlob(2), resultSet.getString(3) };
                 dtm.addRow(row);
             }
+            statement.close();
+            resultSet.close();
         } catch (SQLException throwables) {
             throwables.printStackTrace();
         }
