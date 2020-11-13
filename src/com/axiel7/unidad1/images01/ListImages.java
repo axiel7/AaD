@@ -2,7 +2,7 @@
  * Realizado por Axel Lopez - 2DAM
  * @author: axiel7
  */
-package com.axiel7.images01;
+package com.axiel7.unidad1.images01;
 
 import javax.swing.*;
 import javax.swing.table.DefaultTableModel;

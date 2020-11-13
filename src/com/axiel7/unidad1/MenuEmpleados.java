@@ -2,7 +2,7 @@
  * Realizado por Axel Lopez - 2DAM
  * @author: axiel7
  */
-package com.axiel7;
+package com.axiel7.unidad1;
 
 import java.sql.*;
 import java.util.Scanner;
