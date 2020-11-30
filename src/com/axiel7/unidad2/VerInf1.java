@@ -12,7 +12,7 @@ public class VerInf1 {
     public static void main(String[] args) {
         System.out.println("INFORMACIÓN SOBRE EL FICHERO:");
         File f = new File(args[0]);
-        if(f.exists()){
+        if(f.exists()) {
             System.out.println("Nombre del fichero  : "+f.getName());
             System.out.println("Ruta                : "+f.getPath());
             System.out.println("Ruta absoluta       : "+f.getAbsolutePath());
