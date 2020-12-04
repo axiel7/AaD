@@ -1,26 +1,27 @@
 /*
- * LocalizarID_Empleado.java
+ * LocalizarAPELLIDO_Empleado.java
  * Realizado por Axel Lopez
  * 2DAM
  */
-package com.axiel7.unidad2;
+package com.axiel7.unidad2.ej5;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
+import java.util.Scanner;
 
-public class LocalizarID_Empleado {
+public class LocalizarAPELLIDO_Empleado {
 
     public static void main(String[] args) {
         try {
-            int id = Integer.parseInt(args[0]);
-            readRandom(id);
+            String apellido = args[0];
+            readRandom(apellido);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private static void readRandom(int searchId) throws IOException {
+    private static void readRandom(String searchApellido) throws IOException {
         File f = new File("AleatorioEmple.dat");
         RandomAccessFile raf = new RandomAccessFile(f, "r");
 
@@ -44,7 +45,7 @@ public class LocalizarID_Empleado {
             dep = raf.readInt();
             salario = raf.readDouble();
 
-            if (id == searchId) {
+            if (apellidoStr.trim().equalsIgnoreCase(searchApellido)) {
                 found = true;
                 System.out.println("ID | Apellido | Dpto | Salario");
                 System.out.println(id + " | " + apellidoStr + " | " + dep + " | " + salario);

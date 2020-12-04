@@ -3,7 +3,7 @@
  * Realizado por Axel Lopez
  * 2DAM
  */
-package com.axiel7.unidad2;
+package com.axiel7.unidad2.ej1;
 
 import java.io.*;
 

@@ -1,26 +1,26 @@
 /*
- * SueldosDep.java
+ * LocalizarID_Empleado.java
  * Realizado por Axel Lopez
  * 2DAM
  */
-package com.axiel7.unidad2;
+package com.axiel7.unidad2.ej5;
 
 import java.io.File;
 import java.io.IOException;
 import java.io.RandomAccessFile;
 
-public class SueldosDep {
+public class LocalizarID_Empleado {
 
     public static void main(String[] args) {
         try {
-            int dpto = Integer.parseInt(args[0]);
-            readRandom(dpto);
+            int id = Integer.parseInt(args[0]);
+            readRandom(id);
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
-    private static void readRandom(int searchDpto) throws IOException {
+    private static void readRandom(int searchId) throws IOException {
         File f = new File("AleatorioEmple.dat");
         RandomAccessFile raf = new RandomAccessFile(f, "r");
 
@@ -30,7 +30,6 @@ public class SueldosDep {
         char[] apellido = new char[10];
         char aux;
         boolean found = false;
-        double sumaSalario = 0;
 
         do {
             raf.seek(pos);
@@ -45,18 +44,17 @@ public class SueldosDep {
             dep = raf.readInt();
             salario = raf.readDouble();
 
-            if (dep == searchDpto) {
+            if (id == searchId) {
                 found = true;
-                sumaSalario += salario;
                 System.out.println("ID | Apellido | Dpto | Salario");
                 System.out.println(id + " | " + apellidoStr + " | " + dep + " | " + salario);
+                break;
             }
             pos += 36;
 
         } while (raf.getFilePointer() != raf.length());
 
         if (!found) { System.out.println("Empleado no encontrado"); }
-        else { System.out.println("Suma salarios: " + sumaSalario); }
 
         raf.close();
     }
